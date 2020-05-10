@@ -3,8 +3,7 @@ pipeline{
 	stages{
 		stage("Start Grid"){
 			steps{
-				sh "docker-machine start"
-				sh "docker-compose up -d hub chrome firefox"
+				sh "sudo docker-compose up -d hub chrome firefox"
 			}
 		}
 		stage("Run Test"){
