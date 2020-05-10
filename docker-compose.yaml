@@ -26,5 +26,16 @@ services:
             - HUB_HOST=hub
             - MODULE=search-module.xml
         volumes:
-            - ./search-result:/usr/share/work/test-output
+            - ./output/search-result:/usr/share/work/test-output
+    book-flight-module:
+        image: dockervijayendra/selenium-docker
+        depends_on:
+            - chrome
+            - firefox
+        environment:
+            - BROWSER=firefox
+            - HUB_HOST=hub
+            - MODULE=search-module.xml
+        volumes:
+            - ./output/book-result:/usr/share/work/test-output
             
