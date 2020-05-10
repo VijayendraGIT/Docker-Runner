@@ -3,6 +3,7 @@ pipeline{
 	stages{
 		stage("Start Grid"){
 			steps{
+				sh "docker-machine start default"
 				sh "docker-compose up -d hub chrome firefox"
 			}
 		}
